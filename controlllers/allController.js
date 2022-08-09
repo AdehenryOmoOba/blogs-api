@@ -7,13 +7,12 @@ export const homePageController = (req, res) => {
 };
 
 export const getAllBlogsController = async (req, res, next) => {
-  res.status(200).json({ test: "it is working..." });
-  // try {
-  //   const { rows } = await pool.query("SELECT * FROM blogs");
-  //   res.status(200).json(rows);
-  // } catch (error) {
-  //   res.status(400).json({ error: error.message });
-  // }
+  try {
+    const { rows } = await pool.query("SELECT * FROM blogs");
+    res.status(200).json(rows);
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
 };
 
 export const pageNotFoundController = (req, res) => {
