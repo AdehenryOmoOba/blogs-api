@@ -9,6 +9,6 @@ export const blogsPool = new Pool({
   user: "postgres",
   password: process.env.PSQL_DB_PASSWORD,
   database: "youtube_clone_db",
-  host: "localhost",
+  host: "127.0.0.1",
   port: 5432,
 });
