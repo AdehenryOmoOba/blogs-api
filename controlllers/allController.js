@@ -8,7 +8,9 @@ export const homePageController = (req, res) => {
 
 export const getAllBlogsController = async (req, res, next) => {
   try {
-    const { rows } = await pool.query("SELECT * FROM blogs");
+    const { rows } = await pool.query(
+      "SELECT * FROM blogs ORDER BY posted_at DESC"
+    );
     res.status(200).json(rows);
   } catch (error) {
     res.status(400).json({ error: error.message });
