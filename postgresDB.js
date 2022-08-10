@@ -6,9 +6,9 @@ if (process.env.NODE_ENV !== "production") dotenv.config();
 const { Pool } = poolPackage;
 
 export const blogsPool = new Pool({
-  user: "postgres",
+  user: "hgsmcqse",
   password: process.env.PSQL_DB_PASSWORD,
-  database: "youtube_clone_db",
-  host: "127.0.0.1",
+  database: "hgsmcqse",
+  host: "manny.db.elephantsql.com",
   port: 5432,
 });
